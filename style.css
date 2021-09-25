@@ -1,3 +1,6 @@
+:root {
+    --primary: #804ed5;
+  }
 
 body {
     max-width: 300px;
@@ -32,3 +35,28 @@ button {
     margin-top: 1rem;
     padding: 0.5rem;
 }
+
+
+.footer {
+    background-color: var(--primary);
+    padding: 2rem;
+    color: white;
+    width: 100%;
+    margin-top: 2rem;
+    border-radius: 1rem 1rem 0rem 0rem; 
+  }
+  
+  .footer .social-links {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .footer .social-links .list-item-inline {
+    margin: 1rem;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: white;
+  }
+  
