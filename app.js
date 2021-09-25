@@ -7,7 +7,7 @@ var outputBox = document.querySelector('#output-box')
 
 submitBtn.addEventListener('click', submitHandler)
 
-function submitHandler(){
+function submitHandler() {
     var ip = Number(initialPrice.value);
     var qty = Number(stocksQuantity.value);
     var curr = Number(currentPrice.value);
@@ -16,17 +16,21 @@ function submitHandler(){
 }
 
 function calculateProfitAndLoss(initial, quantity, current) {
-    if(initial&&quantity&&current){
-        if(initial > current) {
-            var loss = (initial - current) * quantity;
-            var lossPercentage = (loss/initial) * 100;
-            showOutput(`The loss is ${loss} and the loss percentage is ${lossPercentage}%`, "loss")
-        } else if(current > initial) {
-            var profit = (current - initial) * quantity;
-            var profitPercentage = (profit/initial) * 100;
-            showOutput(`The profit is ${profit} and the profit percentage is ${profitPercentage}%`, "profit")
-        } else if(initial === current) {
-            showOutput(`No pain no gain and no gain no pain`)
+    if (initial && quantity && current) {
+        if (initial > 0 && quantity > 0 && current > 0) {
+            if (initial > current) {
+                var loss = (initial - current) * quantity;
+                var lossPercentage = (loss / initial) * 100;
+                showOutput(`The loss is ${loss} and the loss percentage is ${lossPercentage}%`, "loss")
+            } else if (current > initial) {
+                var profit = (current - initial) * quantity;
+                var profitPercentage = (profit / initial) * 100;
+                showOutput(`The profit is ${profit} and the profit percentage is ${profitPercentage}%`, "profit")
+            } else if (initial === current) {
+                showOutput(`No pain no gain and no gain no pain`)
+            }
+        } else {
+            showOutput(`Please enter positive values`);
         }
     } else {
         showOutput(`Pleaes enter all fields`);
